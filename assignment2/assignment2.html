@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignment 2</title>
+    <link rel="stylesheet" href="assignment2.css">
+
+    <!-- Include jQuery. If local file is unavailable, include from CDN. -->
+    <script src="jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script>
+        if (typeof jQuery == "undefined") {
+            document.write("\<script src=\"http://code.jquery.com/jquery-1.11.3.min.js\" type=\"text/javascript\"\>\</script\>");
+        }
+    </script>
+    <script src="assignment2.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="letters">
+        <script type="text/javascript">
+            /*
+            // The instructions said to use a while loop,
+            // so here is one way of using a while loop to
+            // iterate an array:
+
+            var i = 0;
+            while (i != alphabet.length) {
+                document.write(alphabet[i] + " ");
+                i++;
+            }
+            */
+
+            // However, in ECMAScript 6 this iteration is much simpler written as:
+            for (var letter of alphabet) document.write(letter + " ");
+
+            // Or in ECMAScript 5:
+            // alphabet.forEach(function(letter) { document.write(letter + " "); });
+        </script>
+    </div>
+    <br><br>
+    <div id="calculation">
+        <script type="text/javascript">
+            var width = prompt("Please enter enter the width of the rectangle:", 6);
+            var height = prompt("Please enter enter the height of the rectangle:", 5);
+
+            document.write("The area of the rectangle is " + area(width, height) + ".");
+        </script>
+    </div>
+</body>
+</html>
