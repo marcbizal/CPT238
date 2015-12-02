@@ -1,0 +1,174 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,300,500);
+@import "glitch";
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+
+    font-family: 'Roboto', sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+#container {
+    color: #FFF;
+
+    text-align: center;
+    font-size: 16px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-style: preserve-3d;
+
+    h1 {
+        font-size: 8em;
+        @include textGlitch("four-oh-four", 17, white, black, red, blue, 450, 115);
+    }
+
+    h2 {
+        font-size: 2.75em;
+    }
+}
+
+@keyframes loader {
+    0% {
+        transform: translateY(0em) scale(1);
+    }
+
+    100% {
+        transform: translateY(0.2em) scale(0.8);
+    }
+}
+
+.loader {
+    font-size: 8em;
+    margin-top: -0.5em;
+    @for $i from 1 through 3 {
+        span:nth-child(#{$i}) {
+            animation: loader 0.6s infinite ease-in-out -#{$i}s alternate-reverse;
+        }
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-30px);}
+    60% {transform: translateY(-15px);}
+}
+
+#bubble {
+    border-radius: 50%;
+    width: 4em;
+    height: 4em;
+    padding: 1em;
+
+    position: absolute;
+    left: 50%;
+    margin-left: -1.75em;
+    bottom: 1em;
+
+    background-color: #FFF;
+    color: #000;
+
+    display: none;
+
+    img {
+        vertical-align: middle;
+        display: inline-block;
+        width: 2em;
+        height: 2em;
+    }
+}
+
+.bounce {
+    animation: bounce 2s infinite;
+}
+
+#window {
+    border-radius: 2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-style: preserve-3d;
+
+    max-width: 980px;
+
+    background-color: #FFF;
+    color: #000;
+
+    padding: 2em;
+    padding-bottom: 1em;
+
+    display: none;
+
+    h1 {
+        font-weight: 300;
+    }
+
+    p {
+        margin-bottom: 1.5em;
+    }
+
+    a {
+        text-decoration: none;
+        color: #AAA;
+
+        &:hover {
+            color: #CCC;
+        }
+    }
+
+    a.close {
+        float: right;
+        font-size: 1.5em;
+    }
+
+    #codepen {
+        display: flex;
+        justify-content: space-between;
+        flex-flow: row wrap;
+    }
+
+    .pen {
+        position: relative;
+
+        border-radius: 2px;
+        display: inline-block;
+        width: 384px;
+        height: 0px;
+        margin-bottom: 1em;
+
+        opacity: 0;
+        .pen-info {
+            position: absolute;
+            bottom: 0;
+
+            color: #FFF;
+            width: 100%;
+            height: 4em;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 1em;
+
+            a {
+                color: #FFF;
+                text-decoration: none;
+                font-weight: 500;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
