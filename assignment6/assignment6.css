@@ -1,0 +1,35 @@
+html {
+    height: 100%;
+    line-height: 2;
+    font-family: Arial, sans-serif;
+    background: rgb(76,175,80);
+    background: -webkit-linear-gradient(white, green);
+    background: -o-linear-gradient(white, green);
+    background: -moz-linear-gradient(white, green);
+    background: linear-gradient(white, green);
+}
+
+h1 {
+    width: 200px;
+    padding: 10px;
+    line-height: normal;
+    font-size: 1.2em;
+    margin: 0;
+    border: 4px solid black;
+}
+
+h2 {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+fieldset {
+    line-height: normal;
+    border: 1px solid white;
+    width: 400px;
+}
+
+.hint {
+    color: red;
+    font-weight: bold;
+}
