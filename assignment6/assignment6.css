@@ -30,6 +30,10 @@ fieldset {
 }
 
 .hint {
-    color: red;
+    margin-left: 1em;
     font-weight: bold;
+}
+
+.error {
+    color: red;
 }
